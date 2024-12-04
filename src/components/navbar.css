@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.navbar{
+    width: 100%;
+    background-color: rgb(18,18,18);
+}
+.navbar .navbar-brand i {
+    color: rgb(2, 138, 2);
+    font-size: 2rem;
+}
+.navbar-details{
+    font-size: 1rem;
+    color: gray;
+    padding: 20px 0 0 20px;
+}
+
+.btn{
+    color: gray !important;
+    font-size: 1rem;
+}
+.btn:hover{
+    color: red;
+}
+.btn4k{
+    color: darkgreen;
+    font-weight: 800;
+    background: none;
+    border: none;
+    padding: 0 15px;
+}
