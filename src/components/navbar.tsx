@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar navbar-expand-lg custom-navbar">
       <div className="container-fluid">
         <Link className="navbar-brand" to="/" ><i>Yts.Mx </i></Link>
-        <i className="navbar-details col-4 ">HD movies at the smallest file size</i>
+        <i className="navbar-details col-3 ">HD movies at the smallest file size</i>
         <button
           className="navbar-toggler"
           type="button"
@@ -17,26 +17,27 @@ const Navbar: React.FC = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon" > </span>
+
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <div className="row w-100">
-            <div className="col-4 text-center">
+            <div className="col-5 text-center">
               <form className="d-flex justify-content-center" role="search">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
               </form>
             </div>
 
-            <div className="col-5 text-end">
-              <ul className="navbar-nav mb-2">
-                    <button className="btn" type="submit">Home</button>
-                    <button className="btn4k" type="submit">4K</button>
-                    <button className="btn" type="submit">Trending</button>
-                    <button className="btn col-6" type="submit">Browse Movies</button>
-                    <button className="btn" type="submit">Login</button>
-                    <button className="btn" type="submit">Register</button>
-              </ul>
+            <div className="col-4 text-end">
+                <ul className="navbar-nav mb-2">
+                  <button className="btn" type="submit">Home</button>
+                  <button className="btn4k" type="submit">4K</button>
+                  <button className="btn" type="submit">Trending</button>
+                  <button className="btn col-6" type="submit">Browse Movies</button>
+                  <button className="btn" type="submit">Login</button>
+                  <button className="btn" type="submit">Register</button>
+                </ul>
             </div>
           </div>
         </div>

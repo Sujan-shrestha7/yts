@@ -18,17 +18,34 @@
     padding: 20px 0 0 20px;
 }
 
-.btn{
-    color: gray !important;
+
+.navbar .btn {
+    color: gray;
     font-size: 1rem;
-}
-.btn:hover{
-    color: red;
-}
-.btn4k{
-    color: darkgreen;
-    font-weight: 800;
     background: none;
     border: none;
-    padding: 0 15px;
-}
+  }
+  
+  .navbar .btn:hover {
+    color: #f2fcec;
+  }
+  
+  .navbar .btn4k {
+    color: darkgreen;
+    font-weight: 800;
+    font-size: 1rem;
+    background: none;
+    border: none;
+  }
+  
+  .navbar .btn4k:hover {
+    color: limegreen;
+  }
+  .custom-toggler-icon {
+    color: white !important;
+  }
+  .navbar-toggler-icon {
+    background-image: none;
+    color: white;
+  }
+  
