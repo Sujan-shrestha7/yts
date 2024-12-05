@@ -2,17 +2,18 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/navbar';
+import { movie_details } from '../APIs/api';
+import { Sdetails } from '../APIs/api';
 
 const MovieDetails = () => {
-  const { moviedetails } = useParams(); // Get movie ID from URL
+  const { moviedetails } = useParams(); 
   const [movieDetails, setMovieDetails] = useState<any>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     if (moviedetails) {
-      // Fetch movie details using the correct API endpoint
       axios
-        .get(`https://yts.mx/api/v2/movie_details.json?movie_id=${moviedetails}`)
+        .get(movie_details()+`${moviedetails}`)
         .then((response) => {
           console.log("response data", response.data);
           setMovieDetails(response.data.data.movie); // Set movie details
@@ -24,17 +25,13 @@ const MovieDetails = () => {
         });
     }
   }, [moviedetails]);
-
-  // Show loading state until data is fetched
   if (loading) {
     return <div>Loading movie details...</div>;
   }
 
-  // If no movie details were found
   if (!movieDetails) {
     return <div>No movie details found.</div>;
   }
-
   return (
     <div>
       <Navbar />

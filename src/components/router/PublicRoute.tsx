@@ -1,6 +1,6 @@
 import { BrowserRouter,Routes,Route} from "react-router-dom";
 import MovieDetails from "../../pages/MovieDetails";
-import Home from "../../pages/home";
+import Home from "../../pages/Home";
 const PublicRoute= () => {
   return (
     <div>
