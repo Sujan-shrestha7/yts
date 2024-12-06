@@ -4,11 +4,17 @@ import Navbar from '../components/navbar';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
 import { homeApi } from '../APIs/api';
+// import Loading from './loading.gif'
+// import loading from './loading/loading';
+import Loading from './loading/loading';
+
 
 const Home: React.FC = () => {
   const [movies, setMovies] = useState<any[]>([]); // Default movie list
   const [searchMovies, setSearchMovies] = useState<any[] | null>(null); // Searched movies
-  const [loading, setLoading] = useState<boolean>(true); // Loading state
+  // const [loading, setLoading] = useState<boolean>(true); // Loading state
+  // const [IsVisible, NotVisible] = useState();
+  const[show,setShow]=useState(true)
   const navigate = useNavigate();
 
   // Fetch default movies on load
@@ -17,7 +23,7 @@ const Home: React.FC = () => {
       try {
         const response = await axios.get(homeApi());
         setMovies(response.data.data.movies);
-        setLoading(false);
+        setShow(false);
       } catch (e) {
         alert('Error fetching movies');
       }
@@ -29,19 +35,26 @@ const Home: React.FC = () => {
     navigate(`/movie-details/${id}`);
   };
 
-  if (loading) {
-    return (
-      <div className="loading">
-        <h2>Loading movie details...</h2>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   // const timer = setTimeout(() => {
+  //   //   setIsVisible(false);
+  //   // }, 3000);
+  //   // return ( ) => {
+  //   //   clearTimeout(timer);
+  //   // }
+  //   return (
+  //     <div className="loading">
+  //       <p>Loading movies...</p>
+  //       <img src={Loading} alt="" />
+  //     </div>
+  //   );
+  // }
 
   return (
     <div className="bodyDiv">
+      <Loading  show={show}/>
       <Navbar setSearchMovies={setSearchMovies} />
       <h1 className="descrp">Welcome to yts.mx! Enjoy!!</h1>
-
       {searchMovies && searchMovies.length > 0 ? (
         <div className="idBox">
           {searchMovies.map((movie) => (

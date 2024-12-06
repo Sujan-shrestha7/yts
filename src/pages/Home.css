@@ -65,3 +65,23 @@
     font-weight: 700;
   }
   
+  .loading{
+    font-size: 1rem;
+  }
+
+.loading .img{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 50px;
+  width: 50px;
+}
+.loading-screen{
+  position:absolute;
+  top:0;
+  z-index: 1;
+}
+.loading-img{
+  width:100vw;
+  height:100vh;
+}
