@@ -21,7 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ setSearchMovies, searchmovies }) => {
       const foundResult = response.data.data.movies;
       setSearchMovies(response.data.data.movies);
       if(!foundResult){
-        alert("wrong input")
+        alert("No movies found !!")
       }
     }
     catch (error) {
