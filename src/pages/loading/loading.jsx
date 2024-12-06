@@ -6,7 +6,7 @@ const loading = ({show}) => {
     useEffect(()=>{
         const timer = setTimeout(() => {
     setIsVisible(false);
-    },2000);
+    },5000);
     // setIsVisible(true);
     return () => {
     clearTimeout(timer);
