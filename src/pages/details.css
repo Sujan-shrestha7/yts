@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.movieDetail{
+    background-color: rgb(43, 22, 22);
+    color: #f2fcec;
+    align-items: center;
+    text-align: center;
+}
+.movieDetail img{
+    border: 6px solid rgb(26, 121, 26);
+}
+.Movie-title{
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.movieDetail p{
+    margin-top: 10px;
+}

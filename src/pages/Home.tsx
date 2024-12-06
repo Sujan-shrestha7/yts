@@ -12,16 +12,17 @@ const Home: React.FC = () => {
 
   // Fetch default movies on load
   useEffect(() => {
-    axios
-      .get(homeApi())
-      .then((response) => {
-        setMovies(response.data.data.movies);
-      })
-      .catch((error) => {
-        console.error('Error fetching movies:', error);
-      });
+    const fetchDate = async ()=>{
+      try{
+    const responsee = await axios.get(homeApi())
+    setMovies(responsee.data.data.movies)
+      }
+      catch(e){
+        alert(e)
+      }
+    }
+    fetchDate();
   }, []);
-
   // Function to navigate to movie details
   const getMovie = (id: number) => {
     navigate(`/movie-details/${id}`);
@@ -32,9 +33,8 @@ const Home: React.FC = () => {
 
 
       <Navbar setSearchMovies={setSearchMovies} />
-      
-      
-      {searchMovies ? (
+      <h1 className='descrp'>Welcome to yts.mx ! Enjoy !!</h1>
+      {searchMovies&& searchMovies.length > 0? (
         <div className='idBox'>
           {searchMovies.map((movie) => (
             <li key={movie.id} onClick={() => getMovie(movie.id)}>
@@ -49,7 +49,9 @@ const Home: React.FC = () => {
             </li>
           ))}
         </div>
-      ) : (
+      ) 
+      :
+      (
         <div className='idBox'>
           {movies.map((movie) => (
             <li key={movie.id} onClick={() => getMovie(movie.id)}>

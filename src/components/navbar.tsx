@@ -7,7 +7,6 @@ interface NavbarProps {
   setSearchMovies: React.Dispatch<React.SetStateAction<any[] | null>>; 
   searchmovies: any[] | null; 
 }
-
 const Navbar: React.FC<NavbarProps> = ({ setSearchMovies, searchmovies }) => {
   const [searchTerm, setSearchTerm] = useState<string>(''); 
 
@@ -15,13 +14,13 @@ const Navbar: React.FC<NavbarProps> = ({ setSearchMovies, searchmovies }) => {
   const handleSearch = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (searchTerm.trim() === '') return;
-
     try {
       const response = await axios.get(
         `https://yts.mx/api/v2/list_movies.json?query_term=${searchTerm}`
       );
       setSearchMovies(response.data.data.movies);
-    } catch (error) {
+    }
+    catch (error) {
       console.error('Error fetching search results:', error);
     }
   };
