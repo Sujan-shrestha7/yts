@@ -18,7 +18,11 @@ const Navbar: React.FC<NavbarProps> = ({ setSearchMovies, searchmovies }) => {
       const response = await axios.get(
         `https://yts.mx/api/v2/list_movies.json?query_term=${searchTerm}`
       );
+      const foundResult = response.data.data.movies;
       setSearchMovies(response.data.data.movies);
+      if(!foundResult){
+        alert("wrong input")
+      }
     }
     catch (error) {
       console.error('Error fetching search results:', error);
